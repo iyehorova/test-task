@@ -1,7 +1,6 @@
-import { ReduxDataInit } from '../_components/ReduxDataInit';
-import { getOrders } from '../api/getOrders';
-import { OrderExtend } from '../types/Order';
-import './page.module.css';
+import { ReduxDataInit } from '../../_components/ReduxDataInit';
+import { getOrders } from '../../api/getOrders';
+import { OrderExtend } from '../../types/Order';
 
 export default async function Orders() {
   const orders = await getOrders();
@@ -15,7 +14,7 @@ export default async function Orders() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: '50px 200px 300px 500px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
               }}
             >
               <span>id</span>

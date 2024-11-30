@@ -1,7 +1,6 @@
-import { ReduxDataInit } from '../_components/ReduxDataInit';
-import { getProducts } from '../api/getProducts';
-import { ProductExtend } from '../types/Product';
-import './page.module.css';
+import { ReduxDataInit } from '../../_components/ReduxDataInit';
+import { getProducts } from '../../api/getProducts';
+import { ProductExtend } from '../../types/Product';
 
 export default async function Products() {
   const products = await getProducts();
@@ -15,7 +14,7 @@ export default async function Products() {
               style={{
                 display: 'grid',
                 gridTemplateColumns: '50px 200px 300px 500px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
               }}
             >
               <span>id</span>
