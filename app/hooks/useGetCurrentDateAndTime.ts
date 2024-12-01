@@ -1,20 +1,17 @@
 import { useEffect, useState } from 'react';
 import { Locales } from '../types/Locales';
-import { formatDate } from '../helpers/formatDate';
-import { formatTime } from '../helpers/formatTime';
+import { getDateAndTime } from '../helpers/getDateAndTime';
 
 export const useGetCurrentDateAndTime = (
   locale: Locales,
 ): [string, string[], boolean] => {
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState(['']);
+  const [date, setDate] = useState(() => getDateAndTime(locale)[0]);
+  const [time, setTime] = useState(() => getDateAndTime(locale)[1]);
   const [columnVisible, setColumnVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const currentDate = new Date();
-      const formattedDate = formatDate(currentDate, locale);
-      const formattedTime = formatTime(currentDate);
+      const [formattedDate, formattedTime] = getDateAndTime(locale);
       setDate(formattedDate);
       setTime(formattedTime);
       setColumnVisible(prevState => !prevState);

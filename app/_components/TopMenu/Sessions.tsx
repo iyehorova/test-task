@@ -1,3 +1,3 @@
-export const Sessions = () => { 
-  return (<div className="col-1">Sessions</div>)
-}
+export const Sessions = () => {
+  return <div className="col-md-1">Sessions</div>;
+};

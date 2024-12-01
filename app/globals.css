@@ -2,6 +2,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --green: #81b93b;
+  --muted: #b9b9b9;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -35,6 +36,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+}
 
 .border-opacity-0 {
   border-color: transparent !important;
@@ -44,8 +48,16 @@ a {
   border-color: var(--green) !important;
 }
 
+.fs-7 {
+  font-size: 0.9rem;
+}
+
 .text-success {
   color: var(--green) !important;
+}
+
+.text-muted {
+  color: var(--muted)
 }
 
 .shadow-right {
@@ -58,6 +70,15 @@ a {
 
 .width-content {
   width: "fit-content";
+}
+
+.form-control:focus{
+  border-color: transparent;
+  box-shadow: 0 0 0 .15rem rgba(129, 185, 59, 0.55);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
 }
 
 @media (prefers-color-scheme: dark) {

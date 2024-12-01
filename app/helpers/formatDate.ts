@@ -14,7 +14,6 @@ export const formatDate = (currentDate: Date, locale: Locales): string => {
   );
 
   const dateParts = formattedDate.replace(/,/g, '').split(' ');
-  console.log(dateParts);
 
   let day, month, date, year;
 

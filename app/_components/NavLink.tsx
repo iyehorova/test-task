@@ -5,8 +5,8 @@ import { useGetUrl } from '@/app/hooks/useGetUrl';
 
 type Props = {
   classes: string;
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 export const NavLink = ({
   classes = '',
   children,
@@ -18,11 +18,14 @@ export const NavLink = ({
   return (
     <Link
       {...rest}
-      className={clsx(classes, 'border-bottom border-3 p-1 mb-3 width-content', {
-        'fw-semibold border-success border-opacity-100':
-          isActive,
-        'border-opacity-0': !isActive,
-      })}
+      className={clsx(
+        classes,
+        'border-bottom border-3 p-1 mb-3 width-content',
+        {
+          'fw-semibold border-success border-opacity-100': isActive,
+          'border-opacity-0': !isActive,
+        },
+      )}
     >
       {children}
     </Link>
