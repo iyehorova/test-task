@@ -1,42 +1,17 @@
+import { OrdersList } from '@/app/_components/Orders';
 import { ReduxDataInit } from '../../_components/ReduxDataInit';
 import { getOrders } from '../../api/getOrders';
 import { OrderExtend } from '../../types/Order';
+import { OrdersHeader } from '@/app/_components/Orders/OrdersHeader';
 
 export default async function Orders() {
   const orders = await getOrders();
   return (
     <ReduxDataInit<OrderExtend> data={orders}>
-      <main className="page">
+      <main className="pt-5">
         <article>
-          <h1>Orders</h1>
-          <div style={{ display: 'grid', gridTemplateColumns: '100%' }}>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '50px 200px 300px 500px',
-                fontWeight: 'bold',
-              }}
-            >
-              <span>id</span>
-              <span>title</span>
-              <span>description</span>
-              <span>product amount</span>
-            </div>
-            {orders.map(order => (
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '50px 200px 300px 500px',
-                }}
-                key={order.id}
-              >
-                <span>{order.id}</span>
-                <span>{order.title}</span>
-                <span>{order.description}</span>
-                <span>{order.products.length}</span>
-              </div>
-            ))}
-          </div>
+          <OrdersHeader amount={orders.length} />
+          <OrdersList orders={orders} />
         </article>
       </main>
     </ReduxDataInit>

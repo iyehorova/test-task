@@ -1,19 +1,12 @@
 import { Locales } from '../types/Locales';
 import { capitalizeWord } from '../utilities/capitalizeWord';
+import { formatDate } from '../utilities/formatDate';
 
-export const formatDate = (currentDate: Date, locale: Locales): string => {
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit',
-  };
-
-  const formattedDate = new Intl.DateTimeFormat(locale, options).format(
-    currentDate,
-  );
-
-  const dateParts = formattedDate.replace(/,/g, '').split(' ');
+export const formatTopMenuDate = (
+  currentDate: Date,
+  locale: Locales,
+): string => {
+  const dateParts = formatDate(currentDate, locale);
 
   let day, month, date, year;
 

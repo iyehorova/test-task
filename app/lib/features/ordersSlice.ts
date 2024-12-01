@@ -17,11 +17,14 @@ const ordersSlice = createSlice({
   reducers: {
     initializeOrders: (state, { payload }: PayloadAction<OrderExtend[]>) => {
       state.orders = payload;
+    },
+    deleteOrder: (state, { payload }: PayloadAction<number>) => { 
+      state.orders = state.orders.filter(({id}) => id !== payload)
     }
   }
 });
 
-export const { initializeOrders } = ordersSlice.actions;
+export const { initializeOrders, deleteOrder } = ordersSlice.actions;
 export default ordersSlice.reducer;
 
 export const selectOrders = (state: RootState) => state.orders.orders;
