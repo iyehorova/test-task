@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-
 type Props = {
   time: string[];
   columnVisible: boolean;
