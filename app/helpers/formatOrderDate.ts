@@ -19,5 +19,6 @@ export const formatOrderDate = (orderDate: string, locale: Locales): string => {
     default:
       return "There isn't such locale";
   }
+
   return `${date}/${month}/${year}`;
 };

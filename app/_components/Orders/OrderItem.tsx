@@ -2,8 +2,10 @@ import Image from 'next/image';
 import { Locales } from '@/app/types/Locales';
 import { OrderExtend } from '@/app/types/Order';
 import { formatOrderDate } from '@/app/helpers/formatOrderDate';
+import { formatShortDate } from '@/app/helpers/formatShortOrderDate';
 import { getOrdersPrice } from '@/app/helpers/getOrdersPrice';
 import { DeleteButton } from './DeleteButton';
+
 
 type Props = {
   order: OrderExtend;
@@ -11,13 +13,14 @@ type Props = {
 
 export const OrderItem: React.FC<Props> = ({ order }) => {
   const locale = Locales.en;
-  const date = formatOrderDate(order.date, locale);
+  const dateShort = formatShortDate(order.date)
+  const dateLong = formatOrderDate(order.date, locale);
   const { usd, uah } = getOrdersPrice(order.products);
 
   return (
     <div className="row align-items-center text-primary">
       <span className="col-sm-6 col-md-5 text-decoration-underline">
-        {order.description}
+        {order.title}
       </span>
 
       <span className="col-1 col-lg-2 d-flex column-gap-2 align-items-center">
@@ -35,7 +38,10 @@ export const OrderItem: React.FC<Props> = ({ order }) => {
         </span>
       </span>
 
-      <span className="col-4 col-md-3 col-lg-2 fs-8">{date} </span>
+      <span className="col-4 col-md-3 col-lg-2">
+        <span className='fs-8 d-block text-light'>{ dateShort}</span>
+        <span className='fs-7'>{ dateLong}</span>
+      </span>
 
       <span className="col-5 col-sm-2 d-flex flex-column  align-items-center">
         <span>
