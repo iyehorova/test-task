@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { NavLink } from './NavLink';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS } from '../../constants';
 
 export const NavigationMenu = () => {
   return (
@@ -13,7 +13,10 @@ export const NavigationMenu = () => {
         height={100}
       />
 
-      <ul className="navbar-nav column-gap-3 column-gap-sm-0 w-100 d-flex flex-row flex-md-column justify-content-center nav pt-5 text-uppercase fw-semibold">
+      <ul
+        className={`navbar-nav column-gap-4 column-gap-md-0 w-100 d-flex flex-row 
+        flex-md-column justify-content-center nav pt-5 text-uppercase fw-semibold`}
+      >
         {NAV_LINKS.map(link => (
           <li className="nav-item d-flex justify-content-center" key={link}>
             <NavLink href={`/${link}`} classes="nav-link">

@@ -2,7 +2,7 @@
 
 import { useAppSelector } from '@/app/lib/hooks';
 import { useEffect, useState } from 'react';
-import { RootState } from '../../lib/store';
+import { RootState } from '../lib/store';
 type Props<T> = {
   amount: number;
   select: (state: RootState) => T[];

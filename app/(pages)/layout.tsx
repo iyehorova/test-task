@@ -16,7 +16,7 @@ export default function PagesLayout({
         <NavigationMenu />
       </div>
 
-      <div className="col-md-9 bg-body-tertiary h-100">
+      <div className="col-md-9 bg-body-tertiary min-vh-100">
         <div className="container-fluid">{children}</div>
       </div>
     </div>

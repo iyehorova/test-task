@@ -50,6 +50,10 @@ h1{
   
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .border-opacity-0 {
   border-color: transparent !important;
 }
@@ -138,10 +142,12 @@ h1{
 
 .uah::after {
   content: 'UAH';
+  font-size: 12px;
 }
 
 .usd::after {
   content: '$';
+  font-size: 12px;
 }
 
 @media (prefers-color-scheme: dark) {

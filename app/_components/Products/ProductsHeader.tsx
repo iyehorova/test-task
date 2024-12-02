@@ -1,7 +1,7 @@
 'use client';
 import { ProductExtend } from '@/app/types/Product';
-import { PageHeaderStyles } from '../Pages/PageHeaderStyles';
-import { PageTitle } from '../Pages/PageTitle';
+import { PageHeaderStyles } from '../UI/PageHeaderStyles';
+import { PageTitle } from '../PageTitle';
 import { selectProducts } from '@/app/lib/features/productsSlice';
 import { Pages } from '@/app/types/Pages';
 

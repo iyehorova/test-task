@@ -3,8 +3,8 @@ import React from 'react';
 import { AddButton } from './AddButton';
 import { Pages } from '@/app/types/Pages';
 import { selectOrders } from '@/app/lib/features/ordersSlice';
-import { PageHeaderStyles } from '../Pages/PageHeaderStyles';
-import { PageTitle } from '../Pages/PageTitle';
+import { PageHeaderStyles } from '../UI/PageHeaderStyles';
+import { PageTitle } from '../PageTitle';
 import { OrderExtend } from '@/app/types/Order';
 
 type Props = {
