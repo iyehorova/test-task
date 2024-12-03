@@ -1,6 +1,6 @@
 import { Locales } from '../types/Locales';
-import { capitalizeWord } from '../utilities/capitalizeWord';
-import { formatDate } from '../utilities/formatDate';
+import { capitalizeWord } from '../utils/capitalizeWord';
+import { formatDate } from '../utils/formatDate';
 
 export const formatTopMenuDate = (
   currentDate: Date,

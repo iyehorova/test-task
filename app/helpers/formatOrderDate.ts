@@ -1,5 +1,5 @@
 import { Locales } from '../types/Locales';
-import { formatDate } from '../utilities/formatDate';
+import { formatDate } from '../utils/formatDate';
 
 export const formatOrderDate = (orderDate: string, locale: Locales): string => {
   const definedDate = new Date(orderDate);

@@ -14,7 +14,7 @@ type Props = {
 export const OrdersHeader: React.FC<Props> = ({ amount }) => {
   return (
     <PageHeaderStyles>
-      <AddButton />
+      <AddButton classes="icon-button-dark" />
       <PageTitle<OrderExtend>
         amount={amount}
         select={selectOrders}

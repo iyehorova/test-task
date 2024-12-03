@@ -1,7 +1,18 @@
 'use client';
+import clsx from 'clsx';
 import Image from 'next/image';
 
-export const AddButton = () => {
+type Props = {
+  width?: number;
+  height?: number;
+  classes?: string;
+};
+
+export const AddButton: React.FC<Props> = ({
+  width = 30,
+  height = 30,
+  classes = '',
+}) => {
   const handleAddOrder = () => {
     console.log('add order');
   };
@@ -10,9 +21,12 @@ export const AddButton = () => {
     <Image
       alt="add order"
       src="/icons/add-icon.svg"
-      width={30}
-      height={30}
-      className="border border-3 border-green rounded-circle icon-button icon-button-dark"
+      width={width}
+      height={height}
+      className={clsx(
+        'border border-3 border-green rounded-circle icon-button',
+        classes,
+      )}
       onClick={handleAddOrder}
     />
   );

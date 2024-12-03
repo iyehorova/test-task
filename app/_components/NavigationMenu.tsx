@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { NavLink } from './NavLink';
-import { NAV_LINKS } from '../../constants';
+import { NavLink } from '../utils/links/NavLink';
+import { NAV_LINKS } from '../constants';
 
 export const NavigationMenu = () => {
   return (
