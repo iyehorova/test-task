@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import ordersSlice from './features/ordersSlice';
 import ordersModeSlice from './features/ordersModeSlice';
 import productsSlice from './features/productsSlice';
+import productsFilterSlice from './features/productsFilterSlice';
 
 export const makeStore = () => {
   return configureStore({
@@ -10,6 +11,7 @@ export const makeStore = () => {
       orders: ordersSlice,
       ordersMode: ordersModeSlice,
       products: productsSlice,
+      filteredProducts: productsFilterSlice,
     },
   });
 };

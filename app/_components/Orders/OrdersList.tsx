@@ -1,15 +1,17 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import clsx from 'clsx';
+import { useSearchParams } from 'next/navigation';
+import { useMediaQuery } from 'react-responsive'; 
+
+import { SearchParams } from '@/app/types/SearchParams';
+import { OrderExtend } from '@/app/types/Order';
 import { useSyncDataWithRedux } from '@/app/hooks/useSyncDataWithRedux';
 import { selectOrders } from '@/app/lib/features/ordersSlice';
-import { OrderExtend } from '@/app/types/Order';
-import { useSearchParams } from 'next/dist/client/components/navigation';
 import { OrderItemShortSize } from './OrderItemShortSize';
-import { OrderProductList } from './ProductsForOrders/OrderProductList';
 import { OrderItemFullSize } from './OrderItemFullSize';
-import { useMediaQuery } from 'react-responsive';
-import clsx from 'clsx';
+import { OrderProductList } from './ProductsForOrders/OrderProductList';
 
 type Props = {
   orders: OrderExtend[];
@@ -21,7 +23,7 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
   const visibleOrders = useSyncDataWithRedux<OrderExtend>(orders, selectOrders);
 
   const searchParams = useSearchParams();
-  const paramsId = Number(searchParams.get('id'));
+  const paramsId = Number(searchParams.get(SearchParams.id));
 
   useEffect(() => {
     if (paramsId && !displayMode) {
@@ -51,7 +53,9 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
           </div>
         )}
 
-        <div className={clsx("col-md-7", {"col-12 col-md-12": isSmallScreen})}>
+        <div
+          className={clsx('col-md-7', { 'col-12 col-md-12': isSmallScreen })}
+        >
           <OrderProductList
             order={selectedOrder}
             isSmallScreen={isSmallScreen}

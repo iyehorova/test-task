@@ -1,12 +1,14 @@
 import Image from 'next/image';
+
 import { OrderExtend } from '@/app/types/Order';
-import { prepareOrdersData } from '@/app/helpers/prepareOrdersData';
 import { Locales } from '@/app/types/Locales';
+import { Pages } from '@/app/types/Pages';
+import { SearchParams } from '@/app/types/SearchParams';
+import { prepareOrdersData } from '@/app/helpers/prepareOrdersData';
+import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { withOrderDeleteButton } from './WithOrderDeleteButton';
 import { DeleteButton } from '../UI/DeleteButton';
-
 import { ItemsStyles } from '../UI/ItemsStyle';
-import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 
 type Props = {
   order: OrderExtend;
@@ -16,11 +18,11 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
   const [dateShort, dateLong, usd, uah] = prepareOrdersData(order, locale);
   const { id, title, products } = order;
 
-  const setSearchParams = useSetSearchParams('orders');
+  const setSearchParams = useSetSearchParams(Pages.orders);
   const OrderDeleteButton = withOrderDeleteButton(DeleteButton);
 
   const handleProductsDisplay = () => {
-    setSearchParams('id', id);
+    setSearchParams(SearchParams.id, id);
   };
 
   return (
@@ -65,7 +67,7 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
             <span className="fs-8 usd d-flex text-light column-gap-2 align-items-baseline">
               {usd}
             </span>
-            
+
             <span className="fs-7 uah d-flex column-gap-2 align-items-baseline">
               {uah}
             </span>
