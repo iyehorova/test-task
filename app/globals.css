@@ -1,6 +1,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dark-green: #5fac02;
+  --green: #81b93b;
+  --muted: #b9b9b9;
+  --light: #a8a8a8;
+  --primary: #555555;
+  --duration: 300ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +39,151 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+h1, h2 {
+  margin-bottom: 0 !important;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.border-opacity-0 {
+  border-color: transparent !important;
+}
+
+.border-success {
+  border-color: var(--green) !important;
+}
+
+.border-muted {
+  border-color: var(--muted);
+}
+
+.border-green {
+  border-color: var(--dark-green) !important;
+}
+
+.bg-muted {
+  background-color: var(--primary);
+}
+
+.bg-success {
+  background-color: var(--green);
+}
+
+.fs-7 {
+  font-size: 0.9rem;
+}
+
+.fs-8 {
+  font-size: 0.8rem;
+}
+
+.text-success {
+  color: var(--green) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-light {
+  color: var(--light) !important;
+}
+
+.shadow-right {
+  box-shadow: 5px 0px 5px 0px rgba(212, 212, 212, 0.75);
+}
+
+.shadow-bottom {
+  box-shadow: 0px 5px 5px 0px rgba(212, 212, 212, 0.75);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0px 5px 5px 0px rgba(212, 212, 212, 0.75);
+}
+
+.width-content {
+  width: 'fit-content';
+}
+
+.form-control:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 0.15rem rgba(129, 185, 59, 0.55);
+}
+
+.form-control::placeholder {
+  color: var(--muted);
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-button,
+.row-button {
+  cursor: pointer;
+}
+
+.icon-button:active {
+  transform: scale(0.9);
+  transform-origin: 50% 50%;
+}
+
+.icon-button-dark:hover {
+  filter: brightness(1.2);
+}
+
+.icon-button-light:hover {
+  filter: brightness(0.6);
+}
+
+.uah::after {
+  content: 'UAH';
+  font-size: 12px;
+}
+
+.usd::after {
+  content: '$';
+  font-size: 12px;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.list-group-disc li::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--green);
+  border-radius: 50%;
+}
+
+.arrow-button::after {
+  content: url('/icons/right-arrow.svg');
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  max-width: 40px;
+  background: #cecece;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
 }
 
 @media (prefers-color-scheme: dark) {
