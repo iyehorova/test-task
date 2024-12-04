@@ -4,18 +4,20 @@ import { PageHeaderStyles } from '../UI/PageHeaderStyles';
 import { PageTitle } from '../PageTitle';
 import { selectProducts } from '@/app/lib/features/productsSlice';
 import { Pages } from '@/app/types/Pages';
+import { capitalizeWord } from '@/app/utils/capitalizeWord';
 
 type Props = {
   amount: number;
 };
 
 export const ProductsHeader: React.FC<Props> = ({ amount }) => {
-  return (
+  const pageTitle = capitalizeWord(Pages.products);
+   return (
     <PageHeaderStyles>
       <PageTitle<ProductExtend>
         amount={amount}
         select={selectProducts}
-        title={Pages.products}
+        title={pageTitle}
       />
     </PageHeaderStyles>
   );
