@@ -45,7 +45,8 @@ input[type='search']::-webkit-search-cancel-button {
   appearance: none;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-bottom: 0 !important;
 }
 
@@ -70,11 +71,15 @@ h1, h2 {
 }
 
 .bg-muted {
-  background-color: var(--primary);
+  background-color: var(--light);
 }
 
 .bg-success {
   background-color: var(--green);
+}
+
+.bg-none {
+  background: none !important;
 }
 
 .fs-7 {
@@ -117,9 +122,15 @@ h1, h2 {
   width: 'fit-content';
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
   border-color: transparent;
   box-shadow: 0 0 0 0.15rem rgba(129, 185, 59, 0.55);
+}
+
+.form-select option:hover {
+  background-color: #81b93b !important;
+  box-shadow: 0 0 0 0.15rem rgba(129, 185, 59, 0.55) inset;
 }
 
 .form-control::placeholder {

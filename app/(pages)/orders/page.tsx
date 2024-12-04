@@ -1,10 +1,10 @@
+import { Suspense } from 'react';
+import { OrderExtend } from '@/app/types/Order';
+import { getOrders } from '@/app/api/getOrders';
 import { OrdersHeader } from '@/app/_components/Orders/OrdersHeader';
 import { PageStyle } from '@/app/_components/UI/PageStyle';
 import { OrdersList } from '@/app/_components/Orders/OrdersList';
-import { ReduxDataInit } from '../../_components/ReduxDataInit';
-import { getOrders } from '../../api/getOrders';
-import { OrderExtend } from '../../types/Order';
-import { Suspense } from 'react';
+import { ReduxDataInit } from '@/app/_components/ReduxDataInit';
 
 export default async function Orders() {
   const orders = await getOrders();
@@ -12,6 +12,7 @@ export default async function Orders() {
     <ReduxDataInit<OrderExtend> data={orders}>
       <PageStyle>
         <OrdersHeader amount={orders.length} />
+
         <Suspense fallback={<div>Loading...</div>}>
           <OrdersList orders={orders} />
         </Suspense>
