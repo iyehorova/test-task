@@ -4,22 +4,22 @@ import { OrderExtend } from '@/app/types/Order';
 import { Locales } from '@/app/types/Locales';
 import { Pages } from '@/app/types/Pages';
 import { SearchParams } from '@/app/types/SearchParams';
+import { DeleteItems } from '@/app/types/DataForDelete';
 import { prepareOrdersData } from '@/app/helpers/prepareOrdersData';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
-import { withOrderDeleteButton } from './WithOrderDeleteButton';
 import { DeleteButton } from '../UI/DeleteButton';
 import { ItemsStyles } from '../UI/ItemsStyle';
 
 type Props = {
   order: OrderExtend;
 };
+
 export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
   const locale = Locales.en;
   const [dateShort, dateLong, usd, uah] = prepareOrdersData(order, locale);
   const { id, title, products } = order;
 
   const setSearchParams = useSetSearchParams(Pages.orders);
-  const OrderDeleteButton = withOrderDeleteButton(DeleteButton);
 
   const handleProductsDisplay = () => {
     setSearchParams(SearchParams.id, id);
@@ -38,7 +38,7 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
         <span className="col-1 col-lg-2 d-flex column-gap-2 align-items-center">
           <span
             className={`rounded-circle border border-muted p-2 icon d-none
-          d-lg-flex align-items-center justify-content-center`}
+              d-lg-flex align-items-center justify-content-center`}
           >
             <Image
               src="/icons/list-icon.svg"
@@ -74,7 +74,7 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
           </span>
         </span>
 
-        <OrderDeleteButton id={id} />
+        <DeleteButton deleteInfo={{ [DeleteItems.order]: id }} item={order} />
       </div>
     </ItemsStyles>
   );

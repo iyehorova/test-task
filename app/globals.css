@@ -6,6 +6,7 @@
   --muted: #b9b9b9;
   --light: #a8a8a8;
   --primary: #555555;
+  --danger: #dc3545;
   --duration: 300ms;
 }
 
@@ -160,6 +161,10 @@ h2 {
   filter: brightness(0.6);
 }
 
+.icon-muted {
+  color: #979797;
+}
+
 .uah::after {
   content: 'UAH';
   font-size: 12px;
@@ -197,8 +202,77 @@ h2 {
   border-bottom-right-radius: 0.375rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.modal {
+  display: block;
+  position: fixed;
+  background: rgba(95, 119, 133, 0.65);
+}
+
+@media (min-width: 769px) {
+  .modal {
+    position: absolute;
   }
+}
+
+.modal-dialog {
+  position: absolute;
+  top: 45vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal-footer {
+  background-color: var(--green);
+}
+
+.btn-confirm {
+  background-color: var(--background);
+  letter-spacing: 1px;
+  box-shadow: 0px 3px 3px 0px rgba(100, 100, 100, 0.55);
+}
+
+.btn-confirm:hover,
+.btn-light:hover {
+  border: 1px solid var(--background);
+  color: var(--background) !important;
+  background-color: transparent;
+}
+
+.btn-confirm:active {
+  color: var(--background) !important;
+  transform: scale(0.9);
+}
+
+.btn-light {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--background);
+  letter-spacing: 1px;
+}
+
+.btn-close {
+  top: -10px;
+  right: -10px;
+  z-index: 2;
+  background: url('/icons/close-icon.svg') transparent no-repeat !important;
+  border: none;
+  opacity: 1;
+  box-shadow: 0px 3px 3px 0px rgba(100, 100, 100, 0.55);
+}
+
+.btn-close:hover {
+  box-shadow: none;
+}
+
+.alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 50%;
+  background: var(--green);
+  text-align: center;
 }
