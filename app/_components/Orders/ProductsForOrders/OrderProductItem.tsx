@@ -1,6 +1,6 @@
 import { Product } from '@/app/types/Product';
-import { withOrderDeleteButton } from '../WithOrderDeleteButton';
 import { DeleteButton } from '../../UI/DeleteButton';
+import { DeleteItems } from '@/app/types/DataForDelete';
 
 type Props = {
   orderId: number;
@@ -8,8 +8,7 @@ type Props = {
 };
 
 export const OrderProductItem: React.FC<Props> = ({ orderId, product }) => {
-  const { title, serialNumber, type } = product;
-  const OrderDeleteButton = withOrderDeleteButton(DeleteButton);
+  const { id, title, serialNumber, type } = product;
 
   return (
     <li className="row list-group-item border mb-1 border-muted hover-shadow rounded d-flex align-items-center">
@@ -19,8 +18,12 @@ export const OrderProductItem: React.FC<Props> = ({ orderId, product }) => {
       </span>
 
       <span className="col-3 text-break">{type}</span>
+      
       <span className="col-1 text-end ml-auto">
-        <OrderDeleteButton id={orderId} />
+        <DeleteButton
+          deleteInfo={{ [DeleteItems.productInOrder]: [orderId, id] }}
+          item={product}
+        />
       </span>
     </li>
   );

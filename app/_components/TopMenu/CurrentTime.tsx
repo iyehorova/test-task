@@ -8,6 +8,7 @@ type Props = {
 export const CurrentTime = ({ time, columnVisible }: Props) => {
   return (
     <div
+      suppressHydrationWarning={true}
       className={`text-nowrap col-md-1 d-flex column-gap-1 
       align-items-center px-2 fs-7 text-muted`}
     >

@@ -2,6 +2,8 @@ import type { Action, ThunkAction } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
 import ordersSlice from './features/ordersSlice';
 import ordersModeSlice from './features/ordersModeSlice';
+import modalSlice from './features/modalSlice';
+import messageSlice from './features/messageSlice';
 import productsSlice from './features/productsSlice';
 import productsFilterSlice from './features/productsFilterSlice';
 
@@ -12,6 +14,8 @@ export const makeStore = () => {
       ordersMode: ordersModeSlice,
       products: productsSlice,
       filteredProducts: productsFilterSlice,
+      modal: modalSlice,
+      message: messageSlice,
     },
   });
 };
