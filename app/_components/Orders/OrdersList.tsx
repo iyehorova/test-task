@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { useSearchParams } from 'next/navigation';
-import { useMediaQuery } from 'react-responsive'; 
+import { useMediaQuery } from 'react-responsive';
 
 import { SearchParams } from '@/app/types/SearchParams';
 import { OrderExtend } from '@/app/types/Order';
@@ -39,8 +39,9 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
     : null;
 
   if (displayMode && selectedOrder) {
+    
     return (
-      <div className="container-fluid  d-flex column-gap-3">
+      <div className="container-fluid  d-flex column-gap-3 pe-4">
         {!isSmallScreen && (
           <div className="col-md-5">
             {visibleOrders.map(order => (
@@ -53,14 +54,16 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
           </div>
         )}
 
-        <div
-          className={clsx('col-md-7', { 'col-12 col-md-12': isSmallScreen })}
-        >
-          <OrderProductList
-            order={selectedOrder}
-            isSmallScreen={isSmallScreen}
-          />
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <div
+            className={clsx('col-md-7', { 'col-12 col-md-12': isSmallScreen })}
+          >
+            <OrderProductList
+              order={selectedOrder}
+              isSmallScreen={isSmallScreen}
+            />
+          </div>
+        </Suspense>
       </div>
     );
   }
