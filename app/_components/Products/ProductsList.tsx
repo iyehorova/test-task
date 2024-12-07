@@ -14,6 +14,7 @@ import { ProductItem } from './ProductItem';
 import { ItemsStyles } from '../UI/ItemsStyle';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { Pages } from '@/app/types/Pages';
+import { BlurIn } from '../Transitions/BlurIn';
 
 type Props = {
   products: ProductExtend[];
@@ -59,12 +60,12 @@ export const ProductsList: React.FC<Props> = ({ products }) => {
   }
 
   return (
-    <div className="container-fluid">
+    <BlurIn className="container-fluid">
       {filteredProducts.map(product => (
         <ItemsStyles key={product.id}>
           <ProductItem product={product} />
         </ItemsStyles>
       ))}
-    </div>
+    </BlurIn>
   );
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
+import Image from 'next/image';
 import clsx from 'clsx';
 import { useSearchParams } from 'next/navigation';
 import { useMediaQuery } from 'react-responsive';
@@ -12,7 +13,8 @@ import { selectOrders } from '@/app/lib/features/ordersSlice';
 import { OrderItemShortSize } from './OrderItemShortSize';
 import { OrderItemFullSize } from './OrderItemFullSize';
 import { OrderProductList } from './ProductsForOrders/OrderProductList';
-import Image from 'next/image';
+import { BlurFadeInOutLR } from '../Transitions/BlurFadeInOutLR';
+import { BlurFadeInOutRL } from '../Transitions/BlurFadeInOutRL';
 
 type Props = {
   orders: OrderExtend[];
@@ -61,7 +63,7 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
     return (
       <div className="container-fluid  d-flex column-gap-3 pe-4">
         {!isSmallScreen && (
-          <div className="col-md-5">
+          <BlurFadeInOutLR className="col-md-5">
             {visibleOrders.map(order => (
               <OrderItemShortSize
                 order={order}
@@ -69,28 +71,28 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
                 key={order.id}
               />
             ))}
-          </div>
+          </BlurFadeInOutLR>
         )}
 
         <Suspense fallback={<div>Loading...</div>}>
-          <div
+          <BlurFadeInOutLR
             className={clsx('col-md-7', { 'col-12 col-md-12': isSmallScreen })}
           >
             <OrderProductList
               order={selectedOrder}
               isSmallScreen={isSmallScreen}
             />
-          </div>
+          </BlurFadeInOutLR>
         </Suspense>
       </div>
     );
   }
 
   return (
-    <div>
+    <BlurFadeInOutRL>
       {visibleOrders.map(order => (
         <OrderItemFullSize order={order} key={order.id} />
       ))}
-    </div>
+    </BlurFadeInOutRL>
   );
 };

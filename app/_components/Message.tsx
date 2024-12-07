@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { closeMessage, selectMessageData } from '../lib/features/messageSlice';
 import { useAppDispatch, useAppSelector } from '../lib/hooks';
+import { BlurIn } from './Transitions/BlurIn';
 
 export const Message = () => {
   const dispatch = useAppDispatch();
@@ -19,8 +20,8 @@ export const Message = () => {
   }
 
   return (
-    <div className={`alert alert-${type}`} role="alert">
-      { info}
-    </div>
+    <BlurIn className={`alert alert-${type}`} role="alert" duration={0.3}>
+      {info}
+    </BlurIn>
   );
 };
