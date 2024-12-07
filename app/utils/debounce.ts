@@ -1,5 +1,10 @@
-type Args = string[] | number[] | [string, number] | [string, null] | [string, string | null];
-type FunctionDecorator = (...args: Args ) => void;
+type Args =
+  | string[]
+  | number[]
+  | [string, number]
+  | [string, null]
+  | [string, string | null];
+type FunctionDecorator = (...args: Args) => void;
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export function debounce(callback: Function, delay: number): FunctionDecorator {

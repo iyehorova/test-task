@@ -11,7 +11,9 @@ export default async function Orders() {
   return (
     <ReduxDataInit<OrderExtend> data={orders}>
       <PageStyle>
-        <OrdersHeader amount={orders.length} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <OrdersHeader amount={orders.length} />
+        </Suspense>
 
         <Suspense fallback={<div>Loading...</div>}>
           <OrdersList orders={orders} />

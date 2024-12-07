@@ -1,13 +1,14 @@
 import { ProductExtend } from '@/app/types/Product';
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
+import { getProductsTypes } from '@/app/helpers/getProductsTypes';
 
 type InitialState = {
-  products: ProductExtend[];
+  products: ProductExtend[] | null;
 };
 
 const initialState: InitialState = {
-  products: [],
+  products: null,
 };
 
 const productsSlice = createSlice({
@@ -21,7 +22,8 @@ const productsSlice = createSlice({
       state.products = payload;
     },
     deleteProduct: (state, { payload }: PayloadAction<number>) => {
-      state.products = state.products.filter(({ id }) => id !== payload);
+      state.products =
+        state.products?.filter(({ id }) => id !== payload) || null;
     },
   },
 });
@@ -30,3 +32,16 @@ export const { initializeProducts, deleteProduct } = productsSlice.actions;
 export default productsSlice.reducer;
 
 export const selectProducts = (state: RootState) => state.products.products;
+export const selectProductsAmount = (state: RootState) =>
+  state.products.products?.length || 0;
+
+export const selectProductsTypes = createSelector(
+  (state: RootState) => state.products.products,
+  products => {
+    if (products) {
+      return getProductsTypes(products);
+    } else {
+      return null;
+    }
+  },
+);

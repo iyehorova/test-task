@@ -12,6 +12,7 @@ import { selectOrders } from '@/app/lib/features/ordersSlice';
 import { OrderItemShortSize } from './OrderItemShortSize';
 import { OrderItemFullSize } from './OrderItemFullSize';
 import { OrderProductList } from './ProductsForOrders/OrderProductList';
+import Image from 'next/image';
 
 type Props = {
   orders: OrderExtend[];
@@ -38,8 +39,25 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
     ? visibleOrders.find(({ id }) => id === paramsId)
     : null;
 
+  if (!visibleOrders.length) {
+    return (
+      <div className="mt-5 text-muted">
+        <p>Cool... All orders have been deleted.</p>
+        <p>
+          <span>Let me know if it is necessary to implement adding orders</span>
+
+          <Image
+            src="/icons/cat-icon.svg"
+            alt="waiting cat"
+            width={50}
+            height={30}
+          />
+        </p>
+      </div>
+    );
+  }
+
   if (displayMode && selectedOrder) {
-    
     return (
       <div className="container-fluid  d-flex column-gap-3 pe-4">
         {!isSmallScreen && (
@@ -69,7 +87,7 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
   }
 
   return (
-    <div className="">
+    <div>
       {visibleOrders.map(order => (
         <OrderItemFullSize order={order} key={order.id} />
       ))}

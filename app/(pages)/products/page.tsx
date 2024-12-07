@@ -8,6 +8,7 @@ import { ReduxDataInit } from '@/app/_components/ReduxDataInit';
 
 export default async function Products() {
   const products = await getProducts();
+
   return (
     <ReduxDataInit<ProductExtend> data={products}>
       <PageStyle>

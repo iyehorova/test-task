@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useDispatch } from 'react-redux';
@@ -11,6 +12,8 @@ import { useSyncDataWithRedux } from '@/app/hooks/useSyncDataWithRedux';
 import { filterProducts } from '@/app/helpers/filterProducts';
 import { ProductItem } from './ProductItem';
 import { ItemsStyles } from '../UI/ItemsStyle';
+import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
+import { Pages } from '@/app/types/Pages';
 
 type Props = {
   products: ProductExtend[];
@@ -22,6 +25,7 @@ export const ProductsList: React.FC<Props> = ({ products }) => {
     products,
     selectProducts,
   );
+  const setSearchParams = useSetSearchParams(Pages.products);
 
   const searchParams = useSearchParams();
   const filter = searchParams.get(SearchParams.filter);
@@ -32,7 +36,27 @@ export const ProductsList: React.FC<Props> = ({ products }) => {
 
   useEffect(() => {
     dispatch(filter ? setFilter(filteredProducts) : clearFilter());
+
+    if (filter && !filteredProducts.length) {
+      setSearchParams(SearchParams.filter, null);
+    }
   }, [filter, filteredProducts]);
+
+  if (!visibleProducts.length) {
+    return (
+      <div className="mt-5 text-muted mx-3">
+        <p>Whoa, whoa, whoa, whoa! You did it.</p>
+        <p>
+          <Image
+            src="/icons/stars-icon.svg"
+            alt="waiting cat"
+            width={100}
+            height={20}
+          />
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid">

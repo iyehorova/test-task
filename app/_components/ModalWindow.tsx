@@ -56,6 +56,7 @@ export const ModalWindow = () => {
           <p className="bg-success p-2">
             Hey! It is too tight! Please make me wider.
           </p>
+
           <Image
             src="/icons/icon-eyes.svg"
             className="p-2"
@@ -121,7 +122,10 @@ export const ModalWindow = () => {
 
                     <span>
                       {productsAmount}{' '}
-                      <span className="fs-7 text-light">Products</span>
+                      <span className="d-sm-none text-light fs-7">pc.</span>
+                      <span className="d-none d-sm-block fs-7 text-light">
+                        Products
+                      </span>
                     </span>
                   </span>
                 )}

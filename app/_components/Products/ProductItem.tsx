@@ -1,9 +1,8 @@
-import Image from 'next/image'; 
+import Image from 'next/image';
 import { ProductExtend } from '@/app/types/Product';
 import { DeleteButton } from '../UI/DeleteButton';
 import { DeleteItems } from '@/app/types/DataForDelete';
 import { prepareGuaranteeDates } from '@/app/helpers/prepareGuaranteeDates';
-
 
 type Props = {
   product: ProductExtend;
@@ -32,7 +31,7 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
       </span>
 
       <span className="col-4 col-md-2 fs-7">{type.toLowerCase()}</span>
-      <span className="col-12 d-sm-none border border-muted"></span>
+      <span className="col-12 d-md-none border border-muted"></span>
 
       <span className="col-4 col-md-2 d-flex flex-column align-items-center">
         <span className="d-flex justify-content-between w-100">
