@@ -3,6 +3,7 @@ import { ProductExtend } from '@/app/types/Product';
 import { DeleteButton } from '../UI/DeleteButton';
 import { DeleteItems } from '@/app/types/DataForDelete';
 import { prepareGuaranteeDates } from '@/app/helpers/prepareGuaranteeDates';
+import { BlurIn } from '../Transitions/BlurIn';
 
 type Props = {
   product: ProductExtend;
@@ -20,7 +21,7 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
   } = prepareGuaranteeDates(guarantee);
 
   return (
-    <div className="row align-items-center text-primary">
+    <BlurIn className="row align-items-center text-primary">
       <span className="col-2 col-md-1">
         <Image src="/img/monitor.png" alt={title} width={50} height={35} />
       </span>
@@ -67,6 +68,6 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
           item={product}
         />
       </span>
-    </div>
+    </BlurIn>
   );
 };

@@ -10,6 +10,8 @@ import { useAppDispatch, useAppSelector } from '../lib/hooks';
 import { MessageType } from '../types/MessageType';
 import { TrashIcon } from './UI/TrashIcon';
 import { useMediaQuery } from 'react-responsive';
+import { BlurIn } from './Transitions/BlurIn';
+import { BlurInOut } from './Transitions/BlurInOut';
 
 export const ModalWindow = () => {
   const dispatch = useAppDispatch();
@@ -49,21 +51,20 @@ export const ModalWindow = () => {
   if (isSmallScreen) {
     return (
       <div className="modal" tabIndex={-1} onClick={handleCloseModal}>
-        <div
-          className="modal-dialog bg-light text-center border border-3 border-success"
-          onClick={handleDialogClick}
-        >
-          <p className="bg-success p-2">
-            Hey! It is too tight! Please make me wider.
-          </p>
+        <div className="modal-dialog " onClick={handleDialogClick}>
+          <BlurIn className="bg-light text-center border border-3 border-success">
+            <p className="bg-success p-2">
+              Hey! It is too tight! Please make me wider.
+            </p>
 
-          <Image
-            src="/icons/icon-eyes.svg"
-            className="p-2"
-            width={50}
-            height={50}
-            alt="eyes"
-          />
+            <Image
+              src="/icons/icon-eyes.svg"
+              className="p-2"
+              width={50}
+              height={50}
+              alt="eyes"
+            />
+          </BlurIn>
         </div>
       </div>
     );
@@ -72,7 +73,7 @@ export const ModalWindow = () => {
   return (
     <div className="modal" tabIndex={-1} onClick={handleCloseModal}>
       <div className="modal-dialog min-width" onClick={handleDialogClick}>
-        <div className="modal-content">
+        <BlurInOut className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title fw-semibold">
               Are you sure you want to remove this item?
@@ -152,7 +153,7 @@ export const ModalWindow = () => {
               Delete
             </button>
           </div>
-        </div>
+        </BlurInOut>
       </div>
     </div>
   );
