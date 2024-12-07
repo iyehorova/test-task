@@ -31,9 +31,10 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
         className="row align-items-center text-primary row-button"
         onClick={handleProductsDisplay}
       >
-        <span className="col-12 col-md-5 text-decoration-underline">
+        <span className="col-12 col-sm-4 col-md-5 text-decoration-underline">
           {title}
         </span>
+        <span className="col-12 d-sm-none border border-muted"></span>
 
         <span className="col-1 col-lg-2 d-flex column-gap-2 align-items-center">
           <span

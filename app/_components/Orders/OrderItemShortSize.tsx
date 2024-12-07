@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import clsx from 'clsx';
+
 import { prepareOrdersData } from '@/app/helpers/prepareOrdersData';
 import { Locales } from '@/app/types/Locales';
 import { OrderExtend } from '@/app/types/Order';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
+import { SearchParams } from '@/app/types/SearchParams';
 
 type Props = {
   order: OrderExtend;
@@ -17,7 +19,7 @@ export const OrderItemShortSize: React.FC<Props> = ({ order, paramsId }) => {
   const { id, products } = order;
 
   const handleProductsDisplay = () => {
-    setSearchParams('id', id === paramsId ? null : id);
+    setSearchParams(SearchParams.id, id === paramsId ? null : id);
   };
 
   return (

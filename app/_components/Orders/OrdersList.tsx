@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { useSearchParams } from 'next/navigation';
-import { useMediaQuery } from 'react-responsive'; 
+import { useMediaQuery } from 'react-responsive';
 
 import { SearchParams } from '@/app/types/SearchParams';
 import { OrderExtend } from '@/app/types/Order';
@@ -12,6 +12,7 @@ import { selectOrders } from '@/app/lib/features/ordersSlice';
 import { OrderItemShortSize } from './OrderItemShortSize';
 import { OrderItemFullSize } from './OrderItemFullSize';
 import { OrderProductList } from './ProductsForOrders/OrderProductList';
+import Image from 'next/image';
 
 type Props = {
   orders: OrderExtend[];
@@ -38,9 +39,27 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
     ? visibleOrders.find(({ id }) => id === paramsId)
     : null;
 
+  if (!visibleOrders.length) {
+    return (
+      <div className="mt-5 text-muted">
+        <p>Cool... All orders have been deleted.</p>
+        <p>
+          <span>Let me know if it is necessary to implement adding orders</span>
+
+          <Image
+            src="/icons/cat-icon.svg"
+            alt="waiting cat"
+            width={50}
+            height={30}
+          />
+        </p>
+      </div>
+    );
+  }
+
   if (displayMode && selectedOrder) {
     return (
-      <div className="container-fluid  d-flex column-gap-3">
+      <div className="container-fluid  d-flex column-gap-3 pe-4">
         {!isSmallScreen && (
           <div className="col-md-5">
             {visibleOrders.map(order => (
@@ -53,20 +72,22 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
           </div>
         )}
 
-        <div
-          className={clsx('col-md-7', { 'col-12 col-md-12': isSmallScreen })}
-        >
-          <OrderProductList
-            order={selectedOrder}
-            isSmallScreen={isSmallScreen}
-          />
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <div
+            className={clsx('col-md-7', { 'col-12 col-md-12': isSmallScreen })}
+          >
+            <OrderProductList
+              order={selectedOrder}
+              isSmallScreen={isSmallScreen}
+            />
+          </div>
+        </Suspense>
       </div>
     );
   }
 
   return (
-    <div className="">
+    <div>
       {visibleOrders.map(order => (
         <OrderItemFullSize order={order} key={order.id} />
       ))}

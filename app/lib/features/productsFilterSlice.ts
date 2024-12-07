@@ -14,13 +14,10 @@ const productsFilterSlice = createSlice({
   name: 'productsFilter',
   initialState,
   reducers: {
-    setFilter: (
-      state,
-      { payload }: PayloadAction<ProductExtend[]>,
-    ) => {
+    setFilter: (state, { payload }: PayloadAction<ProductExtend[]>) => {
       state.products = payload;
     },
-    clearFilter: (state) => {
+    clearFilter: state => {
       state.products = [];
     },
   },
@@ -29,4 +26,7 @@ const productsFilterSlice = createSlice({
 export const { setFilter, clearFilter } = productsFilterSlice.actions;
 export default productsFilterSlice.reducer;
 
-export const selectFilteredProducts = (state: RootState) => state.filteredProducts.products;
+export const selectFilteredProducts = (state: RootState) =>
+  state.filteredProducts.products;
+export const selectFilteredProductsAmount = (state: RootState) =>
+  state.filteredProducts.products.length;

@@ -29,7 +29,6 @@ const modalSlice = createSlice({
       state.displayModal = initialState.displayModal;
       state.dataForDelete = initialState.dataForDelete;
       state.item = initialState.item;
-      console.log('state.displayModal', state.displayModal);
     },
   },
 });

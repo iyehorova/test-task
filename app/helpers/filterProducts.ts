@@ -1,5 +1,12 @@
-import { ProductExtend } from "../types/Product";
+import { ProductExtend } from '../types/Product';
 
-export const filterProducts = (products: ProductExtend[], filterType: string) => { 
-  return products.filter(({type }) => type.toLowerCase() === filterType )
-}
+export const filterProducts = (
+  products: ProductExtend[],
+  filterType: string | null,
+) => {
+  if (!filterType) {
+    return [];
+  }
+
+  return products.filter(({ type }) => type.toLowerCase() === filterType);
+};
