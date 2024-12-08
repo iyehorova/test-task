@@ -13,10 +13,6 @@ export const AddButton: React.FC<Props> = ({
   height = 30,
   classes = '',
 }) => {
-  const handleAddOrder = () => {
-    console.log('add order');
-  };
-
   return (
     <Image
       alt="add order"
@@ -27,7 +23,7 @@ export const AddButton: React.FC<Props> = ({
         'border border-3 border-green rounded-circle icon-button',
         classes,
       )}
-      onClick={handleAddOrder}
+     
     />
   );
 };

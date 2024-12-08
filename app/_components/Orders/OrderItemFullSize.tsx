@@ -28,6 +28,7 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
   return (
     <ItemsStyles>
       <div
+        role='button'
         className="row align-items-center text-primary row-button"
         onClick={handleProductsDisplay}
       >

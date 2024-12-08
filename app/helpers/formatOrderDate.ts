@@ -3,6 +3,11 @@ import { formatDate } from '../utils/formatDate';
 
 export const formatOrderDate = (orderDate: string, locale: Locales): string => {
   const definedDate = new Date(orderDate);
+
+  if (definedDate.toString() === 'Invalid Date') {
+    return 'invalid data';
+  }
+
   const dateParts = formatDate(definedDate, locale);
   let month, date, year;
 
