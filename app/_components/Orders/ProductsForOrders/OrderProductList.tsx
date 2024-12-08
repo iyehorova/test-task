@@ -51,7 +51,7 @@ export const OrderProductList: React.FC<Props> = ({ order, isSmallScreen }) => {
       <div className="d-flex column-gap-3 align-items-center mb-3">
         {isSmallScreen && (
           <span
-            className=" icon-button icon-button-light"
+            className="icon-button icon-button-light"
             onClick={handleReturnToOrders}
           >
             <Image

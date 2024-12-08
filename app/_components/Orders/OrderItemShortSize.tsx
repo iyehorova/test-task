@@ -24,6 +24,7 @@ export const OrderItemShortSize: React.FC<Props> = ({ order, paramsId }) => {
 
   return (
     <div
+      role="button"
       className={clsx(
         'border border-muted mb-2 hover-shadow rounded bg-white',
         'd-flex justify-content-between flex-grow-1',
