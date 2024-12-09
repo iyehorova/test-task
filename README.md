@@ -80,3 +80,37 @@ To run the unit tests, use the following command:
 
 npm run test
 ```
+<hr/>
+
+### Downloading and Running the Docker Image
+#### Prerequisites
+Ensure Docker is installed on your system. You can download it from [Docker's official site](https://www.docker.com/)
+
+
+#### Pull the Docker Image
+To download the prebuilt Docker image from Docker Hub, use the following command:
+
+```bash
+
+docker pull dairinka/test:latest
+```
+
+#### Running the Docker Container
+Once the image is downloaded, you can run it using the command below:
+
+```bash
+
+docker run -d -p 3000:3000 dairinka/test
+```
+
+This command:
+
+- Runs the container in detached mode (-d).
+- Maps port 3000 on your local machine to port 3000 in the container (-p 3000:3000).
+  
+ After running this command, application will be available at:
+
+```
+
+http://localhost:3000
+```
