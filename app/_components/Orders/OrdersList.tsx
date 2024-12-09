@@ -15,6 +15,7 @@ import { OrderItemFullSize } from './OrderItemFullSize';
 import { OrderProductList } from './ProductsForOrders/OrderProductList';
 import { BlurFadeInOutLR } from '../Transitions/BlurFadeInOutLR';
 import { BlurFadeInOutRL } from '../Transitions/BlurFadeInOutRL';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   orders: OrderExtend[];
@@ -37,6 +38,8 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
     }
   }, [paramsId, displayMode]);
 
+  const { t } = useTranslation('orders');
+
   const selectedOrder = paramsId
     ? visibleOrders.find(({ id }) => id === paramsId)
     : null;
@@ -44,9 +47,9 @@ export const OrdersList: React.FC<Props> = ({ orders }) => {
   if (!visibleOrders.length) {
     return (
       <div className="mt-5 text-muted">
-        <p>Cool... All orders have been deleted.</p>
+        <p>{t('no-orders-1')}</p>
         <p>
-          <span>Let me know if it is necessary to implement adding orders</span>
+          <span>{t('no-orders-2')}</span>
 
           <Image
             src="/icons/cat-icon.svg"

@@ -12,6 +12,7 @@ import { SearchParams } from '@/app/types/SearchParams';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteOrder } from '@/app/lib/features/ordersSlice';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   order: OrderExtend;
@@ -32,6 +33,8 @@ export const OrderProductList: React.FC<Props> = ({ order, isSmallScreen }) => {
       dispatch(deleteOrder(order.id));
     }
   }, [products]);
+
+  const { t } = useTranslation('orders');
 
   const handleReturnToOrders = () => {
     router.replace(`/${Pages.orders}`);
@@ -80,7 +83,7 @@ export const OrderProductList: React.FC<Props> = ({ order, isSmallScreen }) => {
       <div>
         <div className="d-flex column-gap-3 align-items-center mb-3 icon-button-dark">
           <AddButton width={15} height={15} classes="border-0" />
-          <span className="text-success">Add product</span>
+          <span className="text-success">{t('add')}</span>
         </div>
 
         <ul

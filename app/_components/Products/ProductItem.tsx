@@ -4,6 +4,7 @@ import { DeleteButton } from '../UI/DeleteButton';
 import { DeleteItems } from '@/app/types/DataForDelete';
 import { prepareGuaranteeDates } from '@/app/helpers/prepareGuaranteeDates';
 import { BlurIn } from '../Transitions/BlurIn';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   product: ProductExtend;
@@ -19,6 +20,7 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
     guaranteeEnd,
     guaranteeEndShort,
   } = prepareGuaranteeDates(guarantee);
+  const { t } = useTranslation('products');
 
   return (
     <BlurIn className="row align-items-center text-primary">
@@ -36,13 +38,13 @@ export const ProductItem: React.FC<Props> = ({ product }) => {
 
       <span className="col-4 col-md-2 d-flex flex-column align-items-center">
         <span className="d-flex justify-content-between w-100">
-          <span className="fs-8 text-light">from</span>{' '}
+          <span className="fs-8 text-light">{t('from')}</span>{' '}
           <span className="d-none d-xl-block fs-7">{guaranteeStart}</span>
           <span className="d-xl-none fs-7">{guaranteeStartShort}</span>
         </span>
 
         <span className="d-flex justify-content-between w-100">
-          <span className="fs-8 text-light">to</span>{' '}
+          <span className="fs-8 text-light">{t('to')}</span>{' '}
           <span className="d-none d-xl-block fs-7">{guaranteeEnd}</span>
           <span className="d-xl-none fs-7">{guaranteeEndShort}</span>
         </span>

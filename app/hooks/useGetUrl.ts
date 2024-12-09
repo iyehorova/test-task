@@ -5,7 +5,7 @@ export const useGetUrl = () => {
 
   if (pathName === '/') return pathName;
 
-  const pageName = pathName.split('/')[1];
-  
+  const pageName = pathName.split('/').slice(-1);
+
   return `/${pageName}`;
 };

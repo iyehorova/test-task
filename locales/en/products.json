@@ -1,0 +1,13 @@
+{
+  "loading": "Loading...",
+  "search": "Search",
+  "orders": "orders",
+  "Products": "products",
+  "filters": "Select product type",
+  "from": "from",
+  "to": "to",
+  "select-type": "Select product type",
+  "no-filter": "no filter",
+  "no-products": "Whoa, whoa, whoa, whoa! You did it.",
+  "uah": "UAH"
+}

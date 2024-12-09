@@ -5,6 +5,7 @@ import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { useAppDispatch } from '@/app/lib/hooks';
 import { mockOrdersExtend } from '@/MockData/mockOrdersExtend';
 import { OrderItemFullSize } from '../OrderItemFullSize';
+import { usePathname } from 'next/navigation';
 
 jest.mock('../../../hooks/useSetSearchParams', () => ({
   useSetSearchParams: jest.fn(),
@@ -12,6 +13,16 @@ jest.mock('../../../hooks/useSetSearchParams', () => ({
 
 jest.mock('../../../lib/hooks', () => ({
   useAppDispatch: jest.fn(),
+}));
+
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
+jest.mock('next/navigation', () => ({
+  usePathname: jest.fn(),
 }));
 
 describe('OrderItemShortSize Component', () => {
@@ -22,6 +33,7 @@ describe('OrderItemShortSize Component', () => {
     jest.clearAllMocks();
     (useSetSearchParams as jest.Mock).mockReturnValue(mockSetSearchParams);
     (useAppDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
+    (usePathname as jest.Mock).mockReturnValue('/en');
   });
 
   // //////////////////

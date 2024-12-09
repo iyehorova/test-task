@@ -296,3 +296,9 @@ h2 {
   background: var(--green);
   text-align: center;
 }
+
+.lang {
+  width: 75px;
+  text-align: right;
+  margin-left: auto;
+}

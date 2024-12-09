@@ -6,7 +6,7 @@ export const CurrentDate = ({ date }: Props) => {
   const [day, ...rest] = date.split(' ');
   return (
     <div
-      className={`d-none col-2 d-md-flex 
+      className={`d-none col-2  col-xl-1 d-md-flex 
       justify-content-end fs-7 text-muted`}
     >
       {day}

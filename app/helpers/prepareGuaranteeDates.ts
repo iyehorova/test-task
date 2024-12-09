@@ -9,7 +9,9 @@ type GuaranteeDates = {
   guaranteeEndShort: string;
 };
 
-export const prepareGuaranteeDates = (guaranteeDates: Guarantee): GuaranteeDates => {
+export const prepareGuaranteeDates = (
+  guaranteeDates: Guarantee,
+): GuaranteeDates => {
   const guaranteeStart = formatProductDate(guaranteeDates.start);
   const guaranteeStartShort = formatShortDate(guaranteeDates.start);
   const guaranteeEnd = formatProductDate(guaranteeDates.end);

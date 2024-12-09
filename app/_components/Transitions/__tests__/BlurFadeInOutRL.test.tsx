@@ -14,7 +14,7 @@ describe('BlurFadeInOutRL', () => {
 
   it('applies the given className', () => {
     const testClassName = 'custom-class';
-    
+
     render(
       <BlurFadeInOutRL className={testClassName}>
         <span>Test Content</span>

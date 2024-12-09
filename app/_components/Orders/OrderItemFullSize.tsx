@@ -1,7 +1,7 @@
 import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 import { OrderExtend } from '@/app/types/Order';
-import { Locales } from '@/app/types/Locales';
 import { Pages } from '@/app/types/Pages';
 import { SearchParams } from '@/app/types/SearchParams';
 import { DeleteItems } from '@/app/types/DataForDelete';
@@ -9,13 +9,15 @@ import { prepareOrdersData } from '@/app/helpers/prepareOrdersData';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { DeleteButton } from '../UI/DeleteButton';
 import { ItemsStyles } from '../UI/ItemsStyle';
+import { useGetLocale } from '@/app/hooks/useGetLocale';
 
 type Props = {
   order: OrderExtend;
 };
 
 export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
-  const locale = Locales.en;
+  const { t } = useTranslation('orders');
+  const locale = useGetLocale();
   const [dateShort, dateLong, usd, uah] = prepareOrdersData(order, locale);
   const { id, title, products } = order;
 
@@ -28,7 +30,7 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
   return (
     <ItemsStyles>
       <div
-        role='button'
+        role="button"
         className="row align-items-center text-primary row-button"
         onClick={handleProductsDisplay}
       >
@@ -52,8 +54,10 @@ export const OrderItemFullSize: React.FC<Props> = ({ order }) => {
 
           <span>
             {products.length}{' '}
-            <span className="d-lg-none text-light fs-7">pc.</span>
-            <span className="d-none d-lg-block fs-7 text-light">Products</span>
+            <span className="d-lg-none text-light fs-7">{t('pc')}</span>
+            <span className="d-none d-lg-block fs-7 text-light">
+              {t('products')}
+            </span>
           </span>
         </span>
 

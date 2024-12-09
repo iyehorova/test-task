@@ -15,6 +15,7 @@ import {
   selectProductsAmount,
   selectProductsTypes,
 } from '@/app/lib/features/productsSlice';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   products: ProductExtend[];
@@ -26,6 +27,7 @@ export const ProductsHeader: React.FC<Props> = ({ products }) => {
   const savedAmount = useAppSelector(selectProductsAmount);
   const types = getProductsTypes(products);
   const savedTypes = useAppSelector(selectProductsTypes);
+  const { t } = useTranslation('products');
 
   useEffect(() => {
     setAmount(() => {
@@ -41,7 +43,7 @@ export const ProductsHeader: React.FC<Props> = ({ products }) => {
 
   return (
     <PageHeaderStyles>
-      <PageTitle amount={amount} title={pageTitle} />
+      <PageTitle amount={amount} title={t(pageTitle)} />
 
       <Suspense fallback={<div>Loading...</div>}>
         <FilterProducts types={savedTypes ? savedTypes : types} />

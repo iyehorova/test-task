@@ -1,13 +1,13 @@
 type Props = {
   width: number;
   height: number;
-}
-export const TrashIcon = ({ width, height}: Props) => {
+};
+export const TrashIcon = ({ width, height }: Props) => {
   return (
     <svg
       fill="currentColor"
       height={width}
-      width={height }
+      width={height}
       version="1.1"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
