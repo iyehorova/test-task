@@ -66,7 +66,7 @@ The app will be available at http://localhost:3000.
 - The app displays the current time and date in real-time in the top-right corner.
   
 #### Localization
--The app supports two languages: English and Ukrainian. The language can be switched by changing the URL (/en or /uk).
+- The app supports two languages: English and Ukrainian. The language can be switched by changing the URL (/en or /uk).
 
 #### Filtering & Search Parameters
 - Products can be filtered by type. When a filter is applied, the URL updates with search parameters, and these can be used for sharing or bookmarking the filtered view.
