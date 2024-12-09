@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import clsx from 'clsx';
+import { useTranslation } from 'react-i18next';
 
 import { prepareOrdersData } from '@/app/helpers/prepareOrdersData';
-import { Locales } from '@/app/types/Locales';
 import { OrderExtend } from '@/app/types/Order';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { SearchParams } from '@/app/types/SearchParams';
+import { useGetLocale } from '@/app/hooks/useGetLocale';
 
 type Props = {
   order: OrderExtend;
@@ -14,7 +15,8 @@ type Props = {
 
 export const OrderItemShortSize: React.FC<Props> = ({ order, paramsId }) => {
   const setSearchParams = useSetSearchParams('orders');
-  const locale = Locales.en;
+  const { t } = useTranslation('orders');
+  const locale = useGetLocale();
   const [dateShort, dateLong] = prepareOrdersData(order, locale);
   const { id, products } = order;
 
@@ -47,7 +49,8 @@ export const OrderItemShortSize: React.FC<Props> = ({ order, paramsId }) => {
           </span>
 
           <span>
-            {products.length} <span className=" fs-7 text-light">Products</span>
+            {products.length}{' '}
+            <span className=" fs-7 text-light">{t('products')}</span>
           </span>
         </span>
 

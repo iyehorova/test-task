@@ -2,13 +2,12 @@
 
 import { CurrentDate } from './CurrentDate';
 import { CurrentTime } from './CurrentTime';
-import { Locales } from '@/app/types/Locales';
 import { useGetCurrentDateAndTime } from '@/app/hooks/useGetCurrentDateAndTime';
+import { useGetLocale } from '@/app/hooks/useGetLocale';
 
 export const TimeContainer = () => {
-  const locale = Locales.en;
+  const locale = useGetLocale();
   const [date, time, columnVisible] = useGetCurrentDateAndTime(locale);
-
   return (
     <>
       <CurrentDate date={date} />

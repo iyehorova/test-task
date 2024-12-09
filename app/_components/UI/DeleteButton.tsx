@@ -18,7 +18,7 @@ export const DeleteButton: React.FC<Props> = ({ deleteInfo, item }) => {
 
   return (
     <span
-      role='delete-button'
+      role="delete-button"
       className="col-1 col-sm-1 ml-auto icon-button icon-button-light icon-muted"
       onClick={handleDelete}
     >

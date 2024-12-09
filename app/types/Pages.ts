@@ -1,4 +1,4 @@
-export enum Pages { 
+export enum Pages {
   orders = 'orders',
-  products = 'products'
+  products = 'products',
 }

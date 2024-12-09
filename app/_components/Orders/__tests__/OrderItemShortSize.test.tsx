@@ -4,9 +4,20 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { mockOrdersExtend } from '@/MockData/mockOrdersExtend';
 import { OrderItemShortSize } from '../OrderItemShortSize';
+import { usePathname } from 'next/navigation';
 
 jest.mock('../../../hooks/useSetSearchParams', () => ({
   useSetSearchParams: jest.fn(),
+}));
+
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
+jest.mock('next/navigation', () => ({
+  usePathname: jest.fn(),
 }));
 
 describe('OrderItemShortSize Component', () => {
@@ -15,6 +26,7 @@ describe('OrderItemShortSize Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
     (useSetSearchParams as jest.Mock).mockReturnValue(mockSetSearchParams);
+    (usePathname as jest.Mock).mockReturnValue('/en');
   });
 
   // //////////////////
@@ -39,7 +51,7 @@ describe('OrderItemShortSize Component', () => {
     expect(mockSetSearchParams).toHaveBeenCalledWith('id', null);
   });
 
-  it('calls setSearchParams with the correct id when clicked', () => {
+  it('toggles paramsId correctly on click', () => {
     const { id } = mockOrdersExtend[0];
 
     render(<OrderItemShortSize order={mockOrdersExtend[1]} paramsId={id} />);

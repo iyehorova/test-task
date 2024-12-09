@@ -1,0 +1,10 @@
+{
+  "loading": "Loading...",
+  "products": "Products",
+  "Orders": "Orders",
+  "pc": "pcs",
+  "add": "Add product",
+  "no-orders-1": "Cool... All orders have been deleted.",
+  "no-orders-2": "Let me know if it is necessary to implement adding orders",
+  "uah": "UAH"
+}

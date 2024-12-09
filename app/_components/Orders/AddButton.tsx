@@ -23,7 +23,6 @@ export const AddButton: React.FC<Props> = ({
         'border border-3 border-green rounded-circle icon-button',
         classes,
       )}
-     
     />
   );
 };

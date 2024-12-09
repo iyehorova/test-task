@@ -14,7 +14,7 @@ describe('BlurInLi', () => {
 
   it('applies the given className', () => {
     const testClassName = 'custom-class';
-    
+
     render(
       <BlurInLi className={testClassName}>
         <span>Test Content</span>

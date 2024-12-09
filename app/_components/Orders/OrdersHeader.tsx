@@ -12,6 +12,7 @@ import { useAppSelector } from '@/app/lib/hooks';
 import { selectOrdersAmount } from '@/app/lib/features/ordersSlice';
 import { useSearchParams } from 'next/navigation';
 import { SearchParams } from '@/app/types/SearchParams';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   amount: number;
@@ -24,6 +25,7 @@ export const OrdersHeader: React.FC<Props> = ({ amount }) => {
   const isSmallScreen = useMediaQuery({ query: '(max-width: 1000px)' });
   const savedAmount = useAppSelector(selectOrdersAmount);
   const pageTitle = capitalizeWord(Pages.orders);
+  const { t } = useTranslation('orders');
 
   useEffect(() => {
     setOrdersAmount(savedAmount);
@@ -36,7 +38,7 @@ export const OrdersHeader: React.FC<Props> = ({ amount }) => {
   return (
     <PageHeaderStyles>
       <AddButton classes="icon-button-dark" />
-      <PageTitle amount={ordersAmount} title={pageTitle} />
+      <PageTitle amount={ordersAmount} title={t(pageTitle)} />
     </PageHeaderStyles>
   );
 };

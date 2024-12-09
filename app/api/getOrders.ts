@@ -1,16 +1,19 @@
-import { ORDERS_PATH, PRODUCTS_PATH } from "../constants";
-import { Order, OrderExtend } from "../types/Order";
-import { fetchData } from "./fetchData";
+import { Order, OrderExtend } from '../types/Order';
+import { fetchData } from './fetchData';
 
-export async function getOrders(): Promise<OrderExtend[]> { 
-  const promisesMap = [fetchData(ORDERS_PATH), fetchData(PRODUCTS_PATH)];
+export async function getOrders(
+  orders_path: string,
+  products_path: string,
+): Promise<OrderExtend[]> {
+  const promisesMap = [fetchData(orders_path), fetchData(products_path)];
   const [orders, products] = await Promise.all(promisesMap);
 
-  return orders.map((orderItem: Order) => { 
+  return orders.map((orderItem: Order) => {
     return {
       ...orderItem,
-      products: products.filter(({ order }: {order: number}) => order === orderItem.id)
-    }
-  })
-  
+      products: products.filter(
+        ({ order }: { order: number }) => order === orderItem.id,
+      ),
+    };
+  });
 }

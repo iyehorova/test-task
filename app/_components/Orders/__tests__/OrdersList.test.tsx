@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { act } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
@@ -25,6 +25,13 @@ jest.mock('next/navigation', () => ({
     query: {},
     replace: jest.fn(),
   })),
+  usePathname: jest.fn(),
+}));
+
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+  }),
 }));
 
 jest.mock('react-responsive', () => ({
@@ -53,11 +60,11 @@ describe('OrdersList Component', () => {
   const routerMock = useRouter as jest.Mock;
 
   beforeEach(() => {
+    jest.clearAllMocks();
+
     jest
       .spyOn(React, 'useState')
       .mockImplementationOnce(() => [false, () => null]);
-
-    jest.clearAllMocks();
 
     searchParamsMock.mockReturnValue({
       get: jest.fn().mockReturnValue(null),
@@ -70,6 +77,7 @@ describe('OrdersList Component', () => {
 
     (useMediaQuery as jest.Mock).mockReturnValue(false);
     store = createTestStore();
+    (usePathname as jest.Mock).mockReturnValue('/en');
   });
 
   // //////////////////
@@ -222,8 +230,7 @@ describe('OrdersList Component', () => {
         </Suspense>
       </Provider>,
     );
-    expect(
-      screen.getByText(/Cool... All orders have been deleted./i),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/no-orders-1/i)).toBeInTheDocument();
+    expect(screen.getByText(/no-orders-2/i)).toBeInTheDocument();
   });
 });

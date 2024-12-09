@@ -1,4 +1,4 @@
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { render, screen, fireEvent } from '@testing-library/react';
 
@@ -18,10 +18,6 @@ jest.mock('../../../lib/hooks', () => ({
   useAppSelector: jest.fn(),
 }));
 
-jest.mock('next/navigation', () => ({
-  useRouter: jest.fn(),
-}));
-
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
 }));
@@ -30,17 +26,29 @@ jest.mock('../../../hooks/useSetSearchParams', () => ({
   useSetSearchParams: jest.fn(),
 }));
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+  usePathname: jest.fn(),
+}));
+
 describe('OrderProductList', () => {
   const mockRouterReplace = jest.fn();
   const mockDispatch = jest.fn();
   const mockSetSearchParams = jest.fn();
 
   beforeEach(() => {
+    jest.clearAllMocks();
     (useAppDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
     (useRouter as jest.Mock).mockReturnValue({ replace: mockRouterReplace });
     (useDispatch as unknown as jest.Mock).mockReturnValue(mockDispatch);
     (useSetSearchParams as jest.Mock).mockReturnValue(mockSetSearchParams);
-    jest.clearAllMocks();
+    (usePathname as jest.Mock).mockReturnValue('/en');
   });
 
   it('calls useEffect to handle empty products and dispatch deleteOrder', () => {

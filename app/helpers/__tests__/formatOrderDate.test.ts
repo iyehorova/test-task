@@ -6,7 +6,7 @@ jest.mock('../../utils/formatDate');
 
 describe('formatOrderDate', () => {
   it('formats date correctly for locale "en"', () => {
-    (formatDate as jest.Mock).mockReturnValue(['', '12', '25', '2023']); // Month, Date, Year
+    (formatDate as jest.Mock).mockReturnValue(['', '12', '25', '2023']);
     const result = formatOrderDate('2023-12-25', Locales.en);
 
     expect(formatDate).toHaveBeenCalledWith(new Date('2023-12-25'), Locales.en);
@@ -14,7 +14,7 @@ describe('formatOrderDate', () => {
   });
 
   it('formats date correctly for locale "uk"', () => {
-    (formatDate as jest.Mock).mockReturnValue(['', '25', 'грудня', '2023']); // Date, Month, Year
+    (formatDate as jest.Mock).mockReturnValue(['', '25', 'грудня', '2023']);
     const result = formatOrderDate('2023-12-25', Locales.uk);
 
     expect(formatDate).toHaveBeenCalledWith(new Date('2023-12-25'), Locales.uk);

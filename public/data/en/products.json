@@ -1,0 +1,813 @@
+[
+  {
+    "id": 1,
+    "serialNumber": "SN12345678",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Logitech G502 HERO",
+    "type": "Mouse",
+    "specification": "Gaming mouse with 11 programmable buttons.",
+    "guarantee": {
+      "start": "2024-11-01 10:30:00",
+      "end": "2025-11-01 10:30:00"
+    },
+    "price": [
+      {
+        "value": 80,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 3440,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 1,
+    "date": "2024-11-01 10:30:00"
+  },
+  {
+    "id": 2,
+    "serialNumber": "SN23456789",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Corsair K70 RGB MK.2",
+    "type": "Keyboard",
+    "specification": "Mechanical keyboard with RGB lighting.",
+    "guarantee": {
+      "start": "2024-11-01 10:30:00",
+      "end": "2025-11-01 10:30:00"
+    },
+    "price": [
+      {
+        "value": 120,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 5160,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 1,
+    "date": "2024-11-01 10:30:00"
+  },
+  {
+    "id": 3,
+    "serialNumber": "SN34567890",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "ASUS ROG Swift PG32UQX",
+    "type": "Monitor",
+    "specification": "32-inch 4K HDR monitor with 144 Hz.",
+    "guarantee": {
+      "start": "2024-11-01 10:30:00",
+      "end": "2025-11-01 10:30:00"
+    },
+    "price": [
+      {
+        "value": 3000,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 129000,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 1,
+    "date": "2024-11-01 10:30:00"
+  },
+  {
+    "id": 4,
+    "serialNumber": "SN45678901",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Dell UltraSharp U2723QE",
+    "type": "Monitor",
+    "specification": "27-inch 4K UHD monitor for work.",
+    "guarantee": {
+      "start": "2024-10-15 14:15:00",
+      "end": "2025-10-15 14:15:00"
+    },
+    "price": [
+      {
+        "value": 600,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 25800,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 2,
+    "date": "2024-10-15 14:15:00"
+  },
+  {
+    "id": 5,
+    "serialNumber": "SN56789012",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Logitech MX Master 3S",
+    "type": "Mouse",
+    "specification": "Wireless mouse for professional use.",
+    "guarantee": {
+      "start": "2024-10-15 14:15:00",
+      "end": "2025-10-15 14:15:00"
+    },
+    "price": [
+      {
+        "value": 100,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 4300,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 2,
+    "date": "2024-10-15 14:15:00"
+  },
+  {
+    "id": 6,
+    "serialNumber": "SN67890123",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Keychron K6 Wireless",
+    "type": "Keyboard",
+    "specification": "Compact wireless keyboard for work.",
+    "guarantee": {
+      "start": "2024-10-15 14:15:00",
+      "end": "2025-10-15 14:15:00"
+    },
+    "price": [
+      {
+        "value": 90,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 3870,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 2,
+    "date": "2024-10-15 14:15:00"
+  },
+  {
+    "id": 7,
+    "serialNumber": "SN78901234",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Microsoft Basic Optical Mouse",
+    "type": "Mouse",
+    "specification": "Affordable optical mouse for everyday use.",
+    "guarantee": {
+      "start": "2024-09-20 09:45:00",
+      "end": "2025-09-20 09:45:00"
+    },
+    "price": [
+      {
+        "value": 15,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 645,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 3,
+    "date": "2024-09-20 09:45:00"
+  },
+  {
+    "id": 8,
+    "serialNumber": "SN89012345",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Acer SB220Q",
+    "type": "Monitor",
+    "specification": "22-inch Full HD monitor.",
+    "guarantee": {
+      "start": "2024-09-20 09:45:00",
+      "end": "2025-09-20 09:45:00"
+    },
+    "price": [
+      {
+        "value": 120,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 5160,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 3,
+    "date": "2024-09-20 09:45:00"
+  },
+  {
+    "id": 9,
+    "serialNumber": "SN90123456",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Logitech K120",
+    "type": "Keyboard",
+    "specification": "Basic wired keyboard for everyday use.",
+    "guarantee": {
+      "start": "2024-09-20 09:45:00",
+      "end": "2025-09-20 09:45:00"
+    },
+    "price": [
+      {
+        "value": 20,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 860,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 3,
+    "date": "2024-09-20 09:45:00"
+  },
+
+  {
+    "id": 10,
+    "serialNumber": "SN01234567",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Wacom Intuos Pro",
+    "type": "Tablet",
+    "specification": "Professional graphic tablet with pen.",
+    "guarantee": {
+      "start": "2024-11-12 11:20:00",
+      "end": "2025-11-12 11:20:00"
+    },
+    "price": [
+      {
+        "value": 400,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 17200,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 4,
+    "date": "2024-11-12 11:20:00"
+  },
+  {
+    "id": 11,
+    "serialNumber": "SN11223344",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "HyperX Cloud II",
+    "type": "Headset",
+    "specification": "Gaming headset with virtual 7.1 surround sound.",
+    "guarantee": {
+      "start": "2024-11-05 12:00:00",
+      "end": "2025-11-05 12:00:00"
+    },
+    "price": [
+      {
+        "value": 100,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 4300,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 6,
+    "date": "2024-11-05 12:00:00"
+  },
+  {
+    "id": 12,
+    "serialNumber": "SN55667788",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "DXRacer Formula Series",
+    "type": "Chair",
+    "specification": "Ergonomic gaming chair for long sessions.",
+    "guarantee": {
+      "start": "2024-10-28 16:00:00",
+      "end": "2025-10-28 16:00:00"
+    },
+    "price": [
+      {
+        "value": 350,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 15050,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 5,
+    "date": "2024-10-28 16:00:00"
+  },
+  {
+    "id": 13,
+    "serialNumber": "SN99887766",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "NZXT H510",
+    "type": "Case",
+    "specification": "Compact mid-tower case for gaming builds.",
+    "guarantee": {
+      "start": "2024-11-01 10:30:00",
+      "end": "2025-11-01 10:30:00"
+    },
+    "price": [
+      {
+        "value": 100,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 4300,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 1,
+    "date": "2024-11-01 10:30:00"
+  },
+  {
+    "id": 14,
+    "serialNumber": "SN44556677",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Corsair RM750x",
+    "type": "Power Supply",
+    "specification": "750W fully modular power supply.",
+    "guarantee": {
+      "start": "2024-11-05 12:00:00",
+      "end": "2025-11-05 12:00:00"
+    },
+    "price": [
+      {
+        "value": 150,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 6450,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 6,
+    "date": "2024-11-05 12:00:00"
+  },
+  {
+    "id": 15,
+    "serialNumber": "SN33445566",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Samsung 980 PRO 1TB",
+    "type": "Storage",
+    "specification": "1TB PCIe 4.0 NVMe SSD.",
+    "guarantee": {
+      "start": "2024-10-28 16:00:00",
+      "end": "2025-10-28 16:00:00"
+    },
+    "price": [
+      {
+        "value": 130,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 5590,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 5,
+    "date": "2024-10-28 16:00:00"
+  },
+  {
+    "id": 16,
+    "serialNumber": "SN22334455",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "ASUS ROG STRIX Z790-E",
+    "type": "Motherboard",
+    "specification": "High-end motherboard for Intel processors.",
+    "guarantee": {
+      "start": "2024-11-01 10:30:00",
+      "end": "2025-11-01 10:30:00"
+    },
+    "price": [
+      {
+        "value": 400,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 17200,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 1,
+    "date": "2024-11-01 10:30:00"
+  },
+  {
+    "id": 17,
+    "serialNumber": "SN11224433",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "NVIDIA GeForce RTX 4070",
+    "type": "Graphics Card",
+    "specification": "High-performance GPU for gaming and design.",
+    "guarantee": {
+      "start": "2024-11-12 11:20:00",
+      "end": "2025-11-12 11:20:00"
+    },
+    "price": [
+      {
+        "value": 600,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 25800,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 4,
+    "date": "2024-11-12 11:20:00"
+  },
+  {
+    "id": 18,
+    "serialNumber": "SN55663377",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Intel Core i9-13900K",
+    "type": "Processor",
+    "specification": "13th gen Intel CPU for gaming and productivity.",
+    "guarantee": {
+      "start": "2024-11-05 12:00:00",
+      "end": "2025-11-05 12:00:00"
+    },
+    "price": [
+      {
+        "value": 500,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 21500,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 6,
+    "date": "2024-11-05 12:00:00"
+  },
+  {
+    "id": 19,
+    "serialNumber": "SN11223399",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Noctua NF-A12x25",
+    "type": "Cooling",
+    "specification": "Premium quiet cooling fans.",
+    "guarantee": {
+      "start": "2024-10-28 16:00:00",
+      "end": "2025-10-28 16:00:00"
+    },
+    "price": [
+      {
+        "value": 30,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 1290,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 5,
+    "date": "2024-10-28 16:00:00"
+  },
+  {
+    "id": 20,
+    "serialNumber": "SN99988877",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Seagate Backup Plus 2TB",
+    "type": "External Storage",
+    "specification": "Portable 2TB external hard drive.",
+    "guarantee": {
+      "start": "2024-11-12 11:20:00",
+      "end": "2025-11-12 11:20:00"
+    },
+    "price": [
+      {
+        "value": 100,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 4300,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 4,
+    "date": "2024-11-12 11:20:00"
+  },
+  {
+    "id": 21,
+    "serialNumber": "SN77766655",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Arozzi Arena Gaming Desk",
+    "type": "Desk",
+    "specification": "Wide ergonomic desk for gaming setups.",
+    "guarantee": {
+      "start": "2024-11-05 12:00:00",
+      "end": "2025-11-05 12:00:00"
+    },
+    "price": [
+      {
+        "value": 300,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 12900,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 6,
+    "date": "2024-11-05 12:00:00"
+  },
+  {
+    "id": 22,
+    "serialNumber": "SN22331199",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Logitech C920",
+    "type": "Webcam",
+    "specification": "HD webcam for streaming and video calls.",
+    "guarantee": {
+      "start": "2024-11-01 10:30:00",
+      "end": "2025-11-01 10:30:00"
+    },
+    "price": [
+      {
+        "value": 70,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 3010,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 1,
+    "date": "2024-11-01 10:30:00"
+  },
+  {
+    "id": 23,
+    "serialNumber": "SN99112233",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "TP-Link Archer AX6000",
+    "type": "Router",
+    "specification": "High-speed Wi-Fi 6 router for seamless connectivity.",
+    "guarantee": {
+      "start": "2024-10-20 15:00:00",
+      "end": "2025-10-20 15:00:00"
+    },
+    "price": [
+      {
+        "value": 250,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 10750,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 2,
+    "date": "2024-10-20 15:00:00"
+  },
+  {
+    "id": 24,
+    "serialNumber": "SN22112233",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "LG UltraGear 27GP850-B",
+    "type": "Monitor",
+    "specification": "27-inch QHD gaming monitor with 165Hz refresh rate.",
+    "guarantee": {
+      "start": "2024-11-10 13:00:00",
+      "end": "2025-11-10 13:00:00"
+    },
+    "price": [
+      {
+        "value": 350,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 15050,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 3,
+    "date": "2024-11-10 13:00:00"
+  },
+  {
+    "id": 25,
+    "serialNumber": "SN11225588",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "SteelSeries QcK Prism",
+    "type": "Mouse Pad",
+    "specification": "RGB gaming mouse pad with smooth surface.",
+    "guarantee": {
+      "start": "2024-11-02 09:00:00",
+      "end": "2025-11-02 09:00:00"
+    },
+    "price": [
+      {
+        "value": 60,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 2580,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 2,
+    "date": "2024-11-02 09:00:00"
+  },
+  {
+    "id": 26,
+    "serialNumber": "SN33447766",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Logitech G502 HERO",
+    "type": "Mouse",
+    "specification": "Gaming mouse with adjustable weights and 25k DPI.",
+    "guarantee": {
+      "start": "2024-10-25 10:00:00",
+      "end": "2025-10-25 10:00:00"
+    },
+    "price": [
+      {
+        "value": 80,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 3440,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 5,
+    "date": "2024-10-25 10:00:00"
+  },
+  {
+    "id": 27,
+    "serialNumber": "SN99884422",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Corsair K70 RGB MK.2",
+    "type": "Keyboard",
+    "specification": "Mechanical gaming keyboard with Cherry MX switches.",
+    "guarantee": {
+      "start": "2024-11-15 14:00:00",
+      "end": "2025-11-15 14:00:00"
+    },
+    "price": [
+      {
+        "value": 170,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 7310,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 6,
+    "date": "2024-11-15 14:00:00"
+  },
+  {
+    "id": 28,
+    "serialNumber": "SN44332211",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Cooler Master Notepal X3",
+    "type": "Cooling",
+    "specification": "Laptop cooling pad with a powerful 200mm fan.",
+    "guarantee": {
+      "start": "2024-11-18 11:00:00",
+      "end": "2025-11-18 11:00:00"
+    },
+    "price": [
+      {
+        "value": 50,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 2150,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 4,
+    "date": "2024-11-18 11:00:00"
+  },
+  {
+    "id": 29,
+    "serialNumber": "SN66554433",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Sony WH-1000XM5",
+    "type": "Headphones",
+    "specification": "Noise-canceling over-ear headphones.",
+    "guarantee": {
+      "start": "2024-11-22 12:00:00",
+      "end": "2025-11-22 12:00:00"
+    },
+    "price": [
+      {
+        "value": 300,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 12900,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 3,
+    "date": "2024-11-22 12:00:00"
+  },
+  {
+    "id": 30,
+    "serialNumber": "SN88776655",
+    "isNew": 1,
+    "photo": "/img/monitor.png",
+    "title": "Anker 10-Port USB Hub",
+    "type": "Accessory",
+    "specification": "High-speed USB hub with 10 ports.",
+    "guarantee": {
+      "start": "2024-11-30 10:00:00",
+      "end": "2025-11-30 10:00:00"
+    },
+    "price": [
+      {
+        "value": 70,
+        "symbol": "USD",
+        "isDefault": 0
+      },
+      {
+        "value": 3010,
+        "symbol": "UAH",
+        "isDefault": 1
+      }
+    ],
+    "order": 5,
+    "date": "2024-11-30 10:00:00"
+  }
+]

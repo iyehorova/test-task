@@ -12,6 +12,7 @@ import { TrashIcon } from './UI/TrashIcon';
 import { useMediaQuery } from 'react-responsive';
 import { BlurIn } from './Transitions/BlurIn';
 import { BlurInOut } from './Transitions/BlurInOut';
+import { useTranslation } from 'react-i18next';
 
 export const ModalWindow = () => {
   const dispatch = useAppDispatch();
@@ -27,6 +28,7 @@ export const ModalWindow = () => {
   const productsAmount = 'products' in item ? item.products.length : undefined;
   const photo = 'photo' in item ? item.photo : undefined;
   const { title } = item;
+  const { t } = useTranslation('common');
 
   if (!isDisplay) {
     return null;
@@ -43,9 +45,7 @@ export const ModalWindow = () => {
   const handleConfirmDeletion = () => {
     handleDeleteDispatch(dataForDelete);
     dispatch(closeModal());
-    dispatch(
-      openMessage({ type: MessageType.success, info: 'Successfully delete' }),
-    );
+    dispatch(openMessage({ type: MessageType.success, info: 'success' }));
   };
 
   if (isSmallScreen) {
@@ -53,9 +53,7 @@ export const ModalWindow = () => {
       <div className="modal" tabIndex={-1} onClick={handleCloseModal}>
         <div className="modal-dialog " onClick={handleDialogClick}>
           <BlurIn className="bg-light text-center border border-3 border-success">
-            <p className="bg-success p-2">
-              Hey! It is too tight! Please make me wider.
-            </p>
+            <p className="bg-success p-2">{t('too-tight')}</p>
 
             <Image
               src="/icons/icon-eyes.svg"
@@ -75,9 +73,7 @@ export const ModalWindow = () => {
       <div className="modal-dialog min-width" onClick={handleDialogClick}>
         <BlurInOut className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title fw-semibold">
-              Are you sure you want to remove this item?
-            </h5>
+            <h5 className="modal-title fw-semibold">{t('modal-title')}</h5>
 
             <button
               type="button"
@@ -123,9 +119,11 @@ export const ModalWindow = () => {
 
                     <span>
                       {productsAmount}{' '}
-                      <span className="d-sm-none text-light fs-7">pc.</span>
+                      <span className="d-sm-none text-light fs-7">
+                        {t('pc')}
+                      </span>
                       <span className="d-none d-sm-block fs-7 text-light">
-                        Products
+                        {t('products')}
                       </span>
                     </span>
                   </span>
@@ -141,7 +139,7 @@ export const ModalWindow = () => {
               data-bs-dismiss="modal"
               onClick={handleCloseModal}
             >
-              Close
+              {t('close')}
             </button>
 
             <button
@@ -150,7 +148,7 @@ export const ModalWindow = () => {
               onClick={handleConfirmDeletion}
             >
               <TrashIcon width={10} height={10} />
-              Delete
+              {t('delete')}
             </button>
           </div>
         </BlurInOut>

@@ -40,7 +40,7 @@ describe('ordersSlice', () => {
     const state = mockState;
     expect(selectOrdersAmount(state)).toBe(2);
   });
-  
+
   it('should return 0 when products are null', () => {
     const state = {
       ...mockState,

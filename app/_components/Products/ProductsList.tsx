@@ -15,6 +15,7 @@ import { ItemsStyles } from '../UI/ItemsStyle';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { Pages } from '@/app/types/Pages';
 import { BlurIn } from '../Transitions/BlurIn';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   products: ProductExtend[];
@@ -43,10 +44,12 @@ export const ProductsList: React.FC<Props> = ({ products }) => {
     }
   }, [filter, filteredProducts]);
 
+  const { t } = useTranslation('products');
+
   if (!visibleProducts.length) {
     return (
       <div className="mt-5 text-muted mx-3">
-        <p>Whoa, whoa, whoa, whoa! You did it.</p>
+        <p>{t('no-products')}</p>
         <p>
           <Image
             src="/icons/stars-icon.svg"

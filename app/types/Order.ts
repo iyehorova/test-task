@@ -1,12 +1,12 @@
-import { Product } from "./Product"
+import { Product } from './Product';
 
-export interface Order { 
-  id: number,
-  title: string,
-  date: string,
-  description: string,
+export interface Order {
+  id: number;
+  title: string;
+  date: string;
+  description: string;
 }
 
-export interface OrderExtend extends Order { 
-  products: Product[]
+export interface OrderExtend extends Order {
+  products: Product[];
 }

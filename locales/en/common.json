@@ -1,0 +1,14 @@
+{
+  "uk": "uk",
+  "en": "en",
+  "search": "Search",
+  "orders": "orders",
+  "products": "products",
+  "pc": "pcs",
+  "too-tight": "Hey! It is too tight! Please make me wider.",
+  "modal-title": "Are you sure you want to remove this item?",
+  "delete": "delete",
+  "close": "close",
+  "success": "Successfully delete",
+  "searchValue": "I am already looking in the task whether it was necessary to implement"
+}

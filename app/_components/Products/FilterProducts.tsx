@@ -3,6 +3,7 @@ import { useSearchParams } from 'next/navigation';
 import { useSetSearchParams } from '@/app/hooks/useSetSearchParams';
 import { Pages } from '@/app/types/Pages';
 import { SearchParams } from '@/app/types/SearchParams';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   types: string[];
@@ -14,6 +15,7 @@ export const FilterProducts: React.FC<Props> = ({ types }) => {
   const setSearchParams = useSetSearchParams(Pages.products);
   const searchParams = useSearchParams();
   const filterParam = searchParams.get(SearchParams.filter);
+  const { t } = useTranslation('products');
 
   useEffect(() => {
     if (filterParam && types.includes(filterParam)) {
@@ -42,17 +44,17 @@ export const FilterProducts: React.FC<Props> = ({ types }) => {
       {!!types.length && (
         <div className="select-wrapper">
           <select
-            className="form-select multiple"
+            className="form-select text-truncate"
             value={value}
             onChange={handleOnChange}
           >
             <option value="init" disabled hidden>
-              Select product type
+              {t('select-type')}
             </option>
 
             {value !== initialSelectValue && (
               <option className="text-body-tertiary" value="clear">
-                no filter
+                {t('no-filter')}
               </option>
             )}
 
