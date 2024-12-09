@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+## Orders & Products SPA
+This is a Single Page Application (SPA) developed using Next.js 15 (SSR) with TypeScript, Redux, and various other modern technologies to manage the state and enhance user experience.
+
+### Features
+- **Real-time Date and Time**: Displayed at the top right corner of the application.
+- **Orders & Products Pages**: Two main sections where users can view and manage orders and products.
+- **Product Filtering**: Products can be filtered by type.
+- **Order Details**: On clicking an order, users can view all products within that order. They can also delete individual products from the order.
+- **Real-time Updates**: Product and order data is managed and updated in real time via Redux.
+- **Animated Transition**s: Page transitions and filtered product displays have animations.
+- **Multilingual Support**: The app supports English and Ukrainian languages, switching between them via URL paths (/en/orders, /uk/orders).
+- **Search Parameters in UR**L: URL parameters are used to reflect search criteria and allow users to bookmark filtered views or specific orders.
+  
+### Technologies Used
+- **Next.js 15** with SSR (Server-Side Rendering)
+- **TypeScript**
+- **Redux Toolkit** for global state management
+- **Axios for HTTP** get requests
+- **Framer Motion** for animations
+- **Bootstrap** for styling
+- **Jest & React Testing Library** for unit testing
+- **Prettier** and **ESLin**t for code formatting and linting
+- **i18n** for multilingual support
+  
+### Installation git
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git clone https://github.com/iyehorova/test-task.git
+cd test-task
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+npm install
+```
+3. Run the development server:
 
-## Learn More
+```bash
 
-To learn more about Next.js, take a look at the following resources:
+npm run dev
+```
+The app will be available at http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Features Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Navigation
+- The app has a navigation menu with links to the Orders and Products pages.
+- It supports routing with parameters like search filters and order details using Next.js app routing.
+  
+#### Orders Page
+- Displays a list of orders with details such as order name, number of products, and total order value in two currencies.
+- Users can click on an order to view its products and delete orders or products.
+- Order deletion is handled via Redux.
+ 
+#### Products Page
+- Displays a list of all products, along with a filter dropdown to sort products by type.
+- Each product shows details such as name, type, warranty dates, prices in different currencies, and the related order name.
+ 
+#### Real-Time Time & Date
+- The app displays the current time and date in real-time in the top-right corner.
+  
+#### Localization
+-The app supports two languages: English and Ukrainian. The language can be switched by changing the URL (/en or /uk).
 
-## Deploy on Vercel
+#### Filtering & Search Parameters
+- Products can be filtered by type. When a filter is applied, the URL updates with search parameters, and these can be used for sharing or bookmarking the filtered view.
+ 
+### Running Tests
+To run the unit tests, use the following command:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run test
+```
