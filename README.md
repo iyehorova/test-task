@@ -100,7 +100,7 @@ Once the image is downloaded, you can run it using the command below:
 
 ```bash
 
-docker run -d -p 3000:3000 dairinka/test
+docker run -p 3000:3000 dairinka/test
 ```
 
 This command:
